@@ -16,10 +16,13 @@ namespace Backend
             Console.WriteLine("Getting DB Connection...");
 
             SqlQueries sql = new SqlQueries();
+            IStatService statService = new ConcreteStatService();
 
-            var dbCountryPopulations = sql.GetCountryPopulations();
+            AggregateCountryPopulation aggregateCountryPopulation = new AggregateCountryPopulation(statService, sql);
 
-            foreach(var countryPopulation in dbCountryPopulations)
+            var aggCountryPopulations = aggregateCountryPopulation.AggergateCountryData();
+
+            foreach(var countryPopulation in aggCountryPopulations)
             {
                 Console.WriteLine(String.Format("CountryName: {0}, Population: {1}", countryPopulation.CountryName, countryPopulation.Population));
             }
