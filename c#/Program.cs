@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -14,13 +15,16 @@ namespace Backend
             Console.WriteLine("Started");
             Console.WriteLine("Getting DB Connection...");
 
-            IDbManager db = new SqliteDbManager();
-            DbConnection conn = db.getConnection();
+            SqlQueries sql = new SqlQueries();
 
-            if(conn == null)
+            var dbCountryPopulations = sql.GetCountryPopulations();
+
+            foreach(var countryPopulation in dbCountryPopulations)
             {
-                Console.WriteLine("Failed to get connection");
+                Console.WriteLine(String.Format("CountryName: {0}, Population: {1}", countryPopulation.CountryName, countryPopulation.Population));
             }
+
+            Console.ReadLine();
         }
     }
 }
