@@ -9,9 +9,9 @@ namespace Backend
     public class AggregateCountryPopulation
     {
         private IStatService statService;
-        private SqlQueries sql;
+        private ISqlQueries sql;
 
-        public AggregateCountryPopulation(IStatService statService, SqlQueries sql)
+        public AggregateCountryPopulation(IStatService statService, ISqlQueries sql)
         {
             this.statService = statService;
             this.sql = sql;

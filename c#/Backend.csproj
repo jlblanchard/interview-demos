@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="AggregateCountryPopulation.cs" />
     <Compile Include="CountryPopulation.cs" />
+    <Compile Include="ISqlQueries.cs" />
     <Compile Include="SqlQueries.cs" />
     <Compile Include="ConcreteStatService.cs" />
     <Compile Include="IDbManager.cs" />

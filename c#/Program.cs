@@ -15,7 +15,7 @@ namespace Backend
             Console.WriteLine("Started");
             Console.WriteLine("Getting DB Connection...");
 
-            SqlQueries sql = new SqlQueries();
+            ISqlQueries sql = new SqlQueries();
             IStatService statService = new ConcreteStatService();
 
             AggregateCountryPopulation aggregateCountryPopulation = new AggregateCountryPopulation(statService, sql);

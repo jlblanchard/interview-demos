@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    public class SqlQueries
+    public class SqlQueries : ISqlQueries
     {
         /// <summary>
         /// Retrieves a list of countries and their total populations
